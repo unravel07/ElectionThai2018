@@ -5,8 +5,8 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card >
-    <ion-list >
+  <ion-card>
+    <ion-list>
       <ion-item class="itemB">
         <ion-row style="font-size: 12px">
           <ion-col col-3 style="text-align: center">
@@ -26,7 +26,28 @@
           </ion-col>
         </ion-row>
       </ion-item>
-      <ion-item>
+
+      <ion-item *ngFor="let party of politicalParties;let i = index">
+        <ion-row style="font-size: 12px">
+          <ion-col col-4>
+            {{i+1}}. {{party.name}}
+          </ion-col>
+          <ion-col col-2>
+            {{party.percent}}
+          </ion-col>
+          <ion-col col-2>
+            {{party.totalMember}}
+          </ion-col>
+          <ion-col col-2>
+            {{party.districtMember}}
+          </ion-col>
+          <ion-col col-2>
+            {{party.partyList}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <!-- <ion-item>
         <ion-row style="font-size: 12px">
           <ion-col col-4>
             1. เพื่อไทย
@@ -139,11 +160,12 @@
             สัดส่วน
           </ion-col>
         </ion-row>
-      </ion-item>
+      </ion-item> -->
+
     </ion-list>
   </ion-card>
-<ion-card text-center>
-<img src="../../assets/imgs/chart.jpg">
-</ion-card>
+  <ion-card text-center>
+    <img src="../../assets/imgs/chart.jpg">
+  </ion-card>
 
 </ion-content>
