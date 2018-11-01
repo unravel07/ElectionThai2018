@@ -1,0 +1,57 @@
+<!--
+  Generated template for the InfoDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>InfoDetailPage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <img src="../../assets/imgs/chart1.jpg">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 text-center>{{areaReceive.name}}</ion-col>
+      <ion-col col-4 text-center>คะแนนโหวต</ion-col>
+      <ion-col col-4 text-center>เปอร์เซ็น</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-4 text-center>คะแนนทั้งหมด</ion-col>
+      <ion-col col-4 text-center>{{areaReceive.totalScore}}</ion-col>
+      <ion-col col-4 text-center>{{areaReceive.percentTotalScore}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-4 text-center>มาตรฐาน</ion-col>
+      <ion-col col-4 text-center>{{areaReceive.standardScore}}</ion-col>
+      <ion-col col-4 text-center>{{areaReceive.percentStandardScore}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-4 text-center>เป้าหมาย</ion-col>
+      <ion-col col-4 text-center>{{areaReceive.goalScore}}</ion-col>
+      <ion-col col-4 text-center>{{areaReceive.percentGoalScore}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-4 text-center>การคาดการณ์</ion-col>
+      <ion-col col-4 text-center>{{areaReceive.expectedScore}}</ion-col>
+      <ion-col col-4 text-center>{{areaReceive.percentExpectedScore}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-4 text-center>คะแนนที่ขาด</ion-col>
+      <ion-col col-4 text-center>{{areaReceive.missingScore}}</ion-col>
+      <ion-col col-4 text-center>{{areaReceive.percentMissingScore}}</ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
