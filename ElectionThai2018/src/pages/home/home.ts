@@ -9,11 +9,18 @@ import { PoliticalParty, GlobalVarible } from '../../app/models';
 export class HomePage {
 
   politicalParties: PoliticalParty[];
-  
-  constructor(public navCtrl: NavController) {
-  }
+  public barChartLabels: string[];
+  // public barChartLabels: string[] = ['เพื่อไทย', 'ประชาธิปัตย์', 'พลังประชารัฐ', 'อนาคตใหม่', 'ภูมิใจไทย', 'อื่นๆ'];
+  public barChartType: string = 'bar';
+  public barChartLegend: boolean = true;
+  public barChartOptions: any = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+  public barChartData: any[];
 
-  ionViewDidEnter() {
+  constructor(public navCtrl: NavController) {
+
     if (GlobalVarible.PoliticalParties == null) {
       GlobalVarible.PoliticalParties = [{
         name: 'เพื่อไทย',
@@ -53,8 +60,17 @@ export class HomePage {
         partyList: 10,
       }]
     }
-
     this.politicalParties = GlobalVarible.PoliticalParties;
+    this.barChartLabels = [this.politicalParties[0].name, this.politicalParties[1].name, this.politicalParties[2].name, this.politicalParties[3].name, this.politicalParties[4].name, this.politicalParties[5].name];
+    this.barChartData = [
+      { data: [this.politicalParties[0].totalMember, this.politicalParties[1].totalMember, this.politicalParties[2].totalMember, this.politicalParties[3].totalMember, this.politicalParties[4].totalMember, this.politicalParties[5].totalMember], label: 'จำนวนสมาชิกพรรคทั้งหมด' },
+
+    ];
+  }
+
+
+  ionViewDidEnter() {
+
   }
 
 }

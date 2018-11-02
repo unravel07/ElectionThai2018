@@ -47,6 +47,15 @@
         </ion-row>
       </ion-item>
 
+      <div style="display: block">
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"></canvas>
+      </div>
+
       <!-- <ion-item>
         <ion-row style="font-size: 12px">
           <ion-col col-4>
@@ -164,8 +173,5 @@
 
     </ion-list>
   </ion-card>
-  <ion-card text-center>
-    <img src="../../assets/imgs/chart.jpg">
-  </ion-card>
-
+  
 </ion-content>
