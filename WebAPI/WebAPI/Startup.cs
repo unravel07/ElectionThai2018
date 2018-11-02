@@ -46,6 +46,7 @@ namespace WebAPI
             app.UseCors(builder =>
                 builder.WithOrigins("*")
                 .AllowAnyHeader()
+                .AllowAnyMethod()
             );
             
             app.UseStaticFiles();
