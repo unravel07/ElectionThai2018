@@ -51,6 +51,7 @@ namespace WebAPI.Controllers
         [HttpPost]
         public void CreatePoliticalParty([FromBody]PoliticalParty party)
         {
+            party.Id = Guid.NewGuid().ToString();
             PoliticalParty.InsertOne(party);
         }
         

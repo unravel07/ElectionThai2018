@@ -7,6 +7,7 @@ namespace WebAPI.Models
 {
     public class PoliticalParty
     {
+        public string Id { get; set; }
         public string Name { get; set; }
         public int Percent { get; set; }
         public int TotalMember { get; set; }

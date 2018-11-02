@@ -7,6 +7,7 @@ namespace WebAPI.Models
 {
     public class District
     {
+        public string Id { get; set; }
         public string Name { get; set; }
         public int Goal { get; set; }
         public int GoalD1 { get; set; }
