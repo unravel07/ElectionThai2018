@@ -8,6 +8,7 @@ import { PoliticalParty, GlobalVarible } from '../../app/models';
 })
 export class HomePage {
 
+  chartE: string;
   politicalParties: PoliticalParty[];
   public barChartLabels: string[];
   // public barChartLabels: string[] = ['เพื่อไทย', 'ประชาธิปัตย์', 'พลังประชารัฐ', 'อนาคตใหม่', 'ภูมิใจไทย', 'อื่นๆ'];
@@ -22,6 +23,8 @@ export class HomePage {
   public barChartDataPartyList: any[];
 
   constructor(public navCtrl: NavController) {
+
+    this.chartE = "totlaMembers";
 
     if (GlobalVarible.PoliticalParties == null) {
       GlobalVarible.PoliticalParties = [{
