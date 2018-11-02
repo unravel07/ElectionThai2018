@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ElectionArea } from '../../app/models';
+import { ElectionArea, District } from '../../app/models';
 
 
 
@@ -18,9 +18,12 @@ import { ElectionArea } from '../../app/models';
 })
 export class InfoDetailPage {
 
-  areaReceive : ElectionArea = new ElectionArea;
+  district: District = new District;
+  percentGoal: number;
+  percentVote: number;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.areaReceive = this.navParams.data._area;
+
   }
   public lineChartData:Array<any> = [
     {data: [5000, 6500, 7000, 7500, 8000], label: 'Goal Score'},
@@ -58,9 +61,11 @@ export class InfoDetailPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad InfoDetailPage');
   }
-  
+
   ionViewDidEnter() {
-    // this.areaReceive = this.navParams.data._area;
+    this.district = this.navParams.data._dis;
+    this.percentGoal = Math.round(this.district.goal * 100 / this.district.totalVote);
+    this.percentVote = Math.round(this.district.vote * 100 / this.district.totalVote);
   }
 
   showChart() {

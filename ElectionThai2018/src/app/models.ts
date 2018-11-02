@@ -36,6 +36,8 @@ export class PartyInDistrict {
 export class GlobalVarible {
     static PoliticalParties: PoliticalParty[];
 
+    static Districts: District[];
+
     // static PheuThai: PoliticalParty;
     // static Democrat: PoliticalParty;
     // static Palangpracharath: PoliticalParty;
