@@ -47,131 +47,63 @@
         </ion-row>
       </ion-item>
 
-      <div style="display: block">
-        <canvas baseChart
-                [datasets]="barChartData"
-                [labels]="barChartLabels"
-                [options]="barChartOptions"
-                [legend]="barChartLegend"
-                [chartType]="barChartType"></canvas>
-      </div>
-
-      <!-- <ion-item>
-        <ion-row style="font-size: 12px">
-          <ion-col col-4>
-            1. เพื่อไทย
-          </ion-col>
-          <ion-col  col-2>
-            33 %
-          </ion-col>
-          <ion-col col-2>
-            พึงมี
-          </ion-col>
-          <ion-col col-2>
-            แบ่งเขต
-          </ion-col>
-          <ion-col col-2>
-            สัดส่วน
-          </ion-col>
-        </ion-row>
-      </ion-item>
-      <ion-item>
-        <ion-row style="font-size: 12px">
-          <ion-col col-4>
-            2. ประชาธิปัตย์
-          </ion-col>
-          <ion-col col-2>
-            24 %
-          </ion-col>
-          <ion-col col-2>
-            พึงมี
-          </ion-col>
-          <ion-col col-2>
-            แบ่งเขต
-          </ion-col>
-          <ion-col col-2>
-            สัดส่วน
-          </ion-col>
-        </ion-row>
-      </ion-item>
-      <ion-item>
-        <ion-row style="font-size: 12px">
-          <ion-col col-4>
-            3. พลังประชารัฐ
-          </ion-col>
-          <ion-col col-2>
-            12 %
-          </ion-col>
-          <ion-col col-2>
-            พึงมี
-          </ion-col>
-          <ion-col col-2>
-            แบ่งเขต
-          </ion-col>
-          <ion-col col-2>
-            สัดส่วน
-          </ion-col>
-        </ion-row>
-      </ion-item>
-      <ion-item>
-        <ion-row style="font-size: 12px">
-          <ion-col col-4>
-            4. อนาคตใหม่
-          </ion-col>
-          <ion-col col-2>
-            20 %
-          </ion-col>
-          <ion-col col-2>
-            พึงมี
-          </ion-col>
-          <ion-col col-2>
-            แบ่งเขต
-          </ion-col>
-          <ion-col col-2>
-            สัดส่วน
-          </ion-col>
-        </ion-row>
-      </ion-item>
-      <ion-item>
-        <ion-row style="font-size: 12px">
-          <ion-col col-4>
-            5. ภูมิใจไทย
-          </ion-col>
-          <ion-col col-2>
-            10 %
-          </ion-col>
-          <ion-col col-2>
-            พึงมี
-          </ion-col>
-          <ion-col col-2>
-            แบ่งเขต
-          </ion-col>
-          <ion-col col-2>
-            สัดส่วน
-          </ion-col>
-        </ion-row>
-      </ion-item>
-      <ion-item>
-        <ion-row style="font-size: 12px">
-          <ion-col col-4>
-            6. อื่นๆ
-          </ion-col>
-          <ion-col col-2>
-            1 %
-          </ion-col>
-          <ion-col col-2>
-            พึงมี
-          </ion-col>
-          <ion-col col-2>
-            แบ่งเขต
-          </ion-col>
-          <ion-col col-2>
-            สัดส่วน
-          </ion-col>
-        </ion-row>
-      </ion-item> -->
-
     </ion-list>
   </ion-card>
-  
+
+
+
+  <ion-segment [(ngModel)]="chartE">
+    <ion-segment-button value="totlaMembers">
+      chart จำนวนสมาชิกวุฒิสภาทั้งหมด
+    </ion-segment-button>
+    <ion-segment-button value="districtMembers">
+      chart จำนวนสมาชิกวุฒิสภาแบบแบ่งเขต
+    </ion-segment-button>
+    <ion-segment-button value="partyLists">
+      chart จำนวนสมาชิกวุฒิสภาแบบสัดส่วน
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="chartE">
+    <ion-list *ngSwitchCase="'totlaMembers'">
+      <div style="display: block">
+        <canvas baseChart 
+        width="45" 
+        height="33"  
+        [datasets]="barChartData" 
+        [labels]="barChartLabels" 
+        [options]="barChartOptions" 
+        [legend]="barChartLegend"
+        [chartType]="barChartType"></canvas>
+      </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'districtMembers'">
+      <div style="display: block">
+        <canvas baseChart 
+        width="45" 
+        height="33"  
+        [datasets]="barChartDataDistrict" 
+        [labels]="barChartLabels" 
+        [options]="barChartOptions" 
+        [legend]="barChartLegend"
+        [chartType]="barChartType"></canvas>
+      </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'partyLists'">
+        <div style="display: block">
+          <canvas baseChart 
+          width="45" 
+          height="33"  
+          [datasets]="barChartDataPartyList" 
+          [labels]="barChartLabels" 
+          [options]="barChartOptions" 
+          [legend]="barChartLegend"
+          [chartType]="barChartType"></canvas>
+        </div>
+      </ion-list>
+  </div>
+
+
 </ion-content>
