@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Detail</ion-title>
+    <ion-title>เขตเลือกตั้ง</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,90 +16,37 @@
 <ion-content padding>
 
 
-  <ion-list>
-    <ion-item>
-      <ion-label>Filter</ion-label>
-      <ion-select interface="alert" cancelText="Cancle" okText="Ok">
-        <ion-option value="1">1</ion-option>
-        <ion-option value="2">2</ion-option>
-        <ion-option value="3">3</ion-option>
-        <ion-option value="4">4</ion-option>
-        <ion-option value="5">5</ion-option>
-        <ion-option value="6">6</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+  <ion-item>
+    <ion-label>Filter</ion-label>
+    <ion-select interface="alert" cancelText="Cancle" okText="Ok">
+      <ion-option value="1">1</ion-option>
+      <ion-option value="2">2</ion-option>
+      <ion-option value="3">3</ion-option>
+      <ion-option value="4">4</ion-option>
+      <ion-option value="5">5</ion-option>
+      <ion-option value="6">6</ion-option>
+    </ion-select>
+  </ion-item>
 
 
   <ion-card>
     <ion-card-content>
 
-      <ion-list item-right>
-        <ion-item>
-          <ion-label>Sort By</ion-label>
-          <ion-select interface="popover" cancelText="Cancle" okText="Ok">
-            <ion-option value="1">1</ion-option>
-            <ion-option value="2">2</ion-option>
-            <ion-option value="3">3</ion-option>
-            <ion-option value="4">4</ion-option>
-            <ion-option value="5">5</ion-option>
-            <ion-option value="6">6</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
+      <ion-row text-center>
+        <ion-col col-6>ชื่อ</ion-col>
+        <ion-col col-3>เป้าหมาย</ion-col>
+        <ion-col col-3>คะแนนเสียง</ion-col>
+      </ion-row>
 
-
-      <ion-grid>
-        <ion-row>
-          <ion-col col-6 text-center>ชื่อ</ion-col>
-          <ion-col col-3 text-center>ความคาดหวัง</ion-col>
-          <ion-col col-3 text-center>ที่ได้</ion-col>
-        </ion-row>
-
-        <button ion-button clear color="dark" (click)="GoInfoDetail(area1)">
-          <ion-col col-6>1.{{area1.name}}</ion-col>
-          <ion-col col-3 text-center>{{area1.expectedScore}}</ion-col>
-          <ion-col col-3 text-center>{{area1.standardScore}}</ion-col>
+      <div *ngFor="let dis of districts;let i = index">
+        <button ion-button clear color="dark" (click)="GoInfoDetail(dis)">
+          <ion-row text-right>
+            <ion-col col-6>{{dis.name}}</ion-col>
+            <ion-col col-3>{{dis.goal}}</ion-col>
+            <ion-col col-3>{{dis.vote}}</ion-col>
+          </ion-row>
         </button>
-
-
-        <button ion-button clear color="dark" (click)="GoInfoDetail(area2)">
-          <ion-col col-6>2.{{area2.name}}</ion-col>
-          <ion-col col-3 text-center>{{area2.expectedScore}}</ion-col>
-          <ion-col col-3 text-center>{{area2.standardScore}}</ion-col>
-        </button>
-
-
-
-
-        <button ion-button clear color="dark" (click)="GoInfoDetail(area3)">
-          <ion-col col-6>3.{{area3.name}}</ion-col>
-          <ion-col col-3 text-center>{{area3.expectedScore}}</ion-col>
-          <ion-col col-3 text-center>{{area3.standardScore}}</ion-col>
-        </button>
-
-
-
-        <button ion-button clear color="dark" (click)="GoInfoDetail(area4)">
-          <ion-col col-6>4.{{area4.name}}</ion-col>
-          <ion-col col-3 text-center>{{area4.expectedScore}}</ion-col>
-          <ion-col col-3 text-center>{{area4.standardScore}}</ion-col>
-        </button>
-
-        <button ion-button clear color="dark" (click)="GoInfoDetail(area5)">
-          <ion-col col-6>5.{{area5.name}}</ion-col>
-          <ion-col col-3 text-center>{{area5.expectedScore}}</ion-col>
-          <ion-col col-3 text-center>{{area5.standardScore}}</ion-col>
-        </button>
-
-
-        <button ion-button clear color="dark" (click)="GoInfoDetail(area6)">
-          <ion-col col-6>5.{{area6.name}}</ion-col>
-          <ion-col col-3 text-center>{{area6.expectedScore}}</ion-col>
-          <ion-col col-3 text-center>{{area6.standardScore}}</ion-col>
-        </button>
-
-      </ion-grid>
+      </div>
 
     </ion-card-content>
   </ion-card>
