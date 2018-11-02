@@ -22,6 +22,7 @@ export class DetailPage {
   districts: District[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.track = 'ทั้งหมด';
   }
 
   ionViewDidLoad() {
