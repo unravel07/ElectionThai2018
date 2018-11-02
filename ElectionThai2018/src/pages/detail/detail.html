@@ -17,35 +17,86 @@
 
   <ion-item>
     <ion-label>Filter</ion-label>
-    <ion-select interface="alert" cancelText="Cancle" okText="Ok">
-      <ion-option value="1">1</ion-option>
-      <ion-option value="2">2</ion-option>
-      <ion-option value="3">3</ion-option>
-      <ion-option value="4">4</ion-option>
-      <ion-option value="5">5</ion-option>
-      <ion-option value="6">6</ion-option>
+    <ion-select interface="alert" cancelText="Cancle" okText="Ok" [(ngModel)]="track">
+      <ion-option value="ชนะ">ชนะ</ion-option>
+      <ion-option value="เสมอ">เสมอ</ion-option>
+      <ion-option value="แพ้">แพ้</ion-option>
+      <ion-option value="ทั้งหมด">ทั้งหมด</ion-option>
+
     </ion-select>
   </ion-item>
 
   <ion-card>
     <ion-card-content>
-
       <ion-row text-center>
         <ion-col col-6>ชื่อ</ion-col>
         <ion-col col-3>เป้าหมาย</ion-col>
         <ion-col col-3>คะแนนเสียง</ion-col>
       </ion-row>
 
-      <div *ngFor="let dis of districts;let i = index">
-        <button ion-button clear color="dark" (click)="GoInfoDetail(dis)">
-          <ion-row text-right>
-            <ion-col col-6>{{dis.name}}</ion-col>
-            <ion-col col-3>{{dis.goal}}</ion-col>
-            <ion-col col-3>{{dis.vote}}</ion-col>
-          </ion-row>
-        </button>
+      <div [ngSwitch]="track">
+        <div *ngSwitchCase=null>
+          <div *ngFor="let dis of districts;let i = index">
+            <button ion-button clear color="dark" (click)="GoInfoDetail(dis)">
+              <ion-row text-right>
+                <ion-col col-6>{{dis.name}}</ion-col>
+                <ion-col col-3>{{dis.goal}}</ion-col>
+                <ion-col col-3>{{dis.vote}}</ion-col>
+              </ion-row>
+            </button>
+          </div>
+        </div>
+        <div *ngSwitchCase="'ทั้งหมด'">
+          <div *ngFor="let dis of districts;let i = index">
+            <button ion-button clear color="dark" (click)="GoInfoDetail(dis)">
+              <ion-row text-right>
+                <ion-col col-6>{{dis.name}}</ion-col>
+                <ion-col col-3>{{dis.goal}}</ion-col>
+                <ion-col col-3>{{dis.vote}}</ion-col>
+              </ion-row>
+            </button>
+          </div>
+        </div>
+        <div *ngSwitchCase="'ชนะ'">
+          <div *ngFor="let dis of districts;let i = index">
+            <div *ngIf="dis.tag == 'ชนะ'">
+              <button ion-button clear color="dark" (click)="GoInfoDetail(dis)">
+                <ion-row text-right>
+                  <ion-col col-6>{{dis.name}}</ion-col>
+                  <ion-col col-3>{{dis.goal}}</ion-col>
+                  <ion-col col-3>{{dis.vote}}</ion-col>
+                </ion-row>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div *ngSwitchCase="'เสมอ'">
+          <div *ngFor="let dis of districts;let i = index">
+            <div *ngIf="dis.tag == 'เสมอ'">
+              <button ion-button clear color="dark" (click)="GoInfoDetail(dis)">
+                <ion-row text-right>
+                  <ion-col col-6>{{dis.name}}</ion-col>
+                  <ion-col col-3>{{dis.goal}}</ion-col>
+                  <ion-col col-3>{{dis.vote}}</ion-col>
+                </ion-row>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div *ngSwitchCase="'แพ้'">
+          <div *ngFor="let dis of districts;let i = index">
+            <div *ngIf="dis.tag == 'แพ้'">
+              <button ion-button clear color="dark" (click)="GoInfoDetail(dis)">
+                <ion-row text-right>
+                  <ion-col col-6>{{dis.name}}</ion-col>
+                  <ion-col col-3>{{dis.goal}}</ion-col>
+                  <ion-col col-3>{{dis.vote}}</ion-col>
+                </ion-row>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-
     </ion-card-content>
   </ion-card>
 

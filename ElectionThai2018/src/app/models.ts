@@ -21,11 +21,22 @@ export class PoliticalParty {
 }
 
 export class District {
+    tag: string;
     name: string;
     totalVote: number;
     goal: number;
     vote: number;
     PartyInDistricts: PartyInDistrict[];
+    goalD1:number;
+    goalD2:number;
+    goalD3:number;
+    goalD4:number;
+
+    voteD1: number;
+    voteD2: number;
+    voteD3: number;
+    voteD4: number;
+
 }
 
 export class PartyInDistrict {
