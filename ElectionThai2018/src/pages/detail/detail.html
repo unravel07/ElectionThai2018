@@ -22,26 +22,25 @@
       <ion-option value="เสมอ">เสมอ</ion-option>
       <ion-option value="แพ้">แพ้</ion-option>
       <ion-option value="ทั้งหมด">ทั้งหมด</ion-option>
-
     </ion-select>
   </ion-item>
 
-  <ion-card >
+  <ion-card>
     <ion-item class="itemB">
       <ion-row text-center style="font-size: 12px">
-      <ion-col col-5>ชื่อ</ion-col>
-      <ion-col col-3>เป้าหมาย</ion-col>
-      <ion-col col-4>คะแนนเสียง</ion-col>
-    </ion-row>
+        <ion-col col-5>ชื่อ</ion-col>
+        <ion-col col-3>เป้าหมาย</ion-col>
+        <ion-col col-4>คะแนนเสียง</ion-col>
+      </ion-row>
     </ion-item>
-    
+
   </ion-card>
 
   <div [ngSwitch]="track">
     <div *ngSwitchCase="'ทั้งหมด'">
       <div *ngFor="let dis of districts;let i = index">
         <!-- <button ion-button clear color="dark" text-center (click)="GoInfoDetail(dis)"> -->
-        <ion-grid >
+        <ion-grid>
           <ion-row text-center (click)="GoInfoDetail(dis)">
             <ion-col col-5>{{dis.name}}</ion-col>
             <ion-col col-3>{{dis.goal}}</ion-col>
@@ -56,11 +55,13 @@
       <div *ngFor="let dis of districts;let i = index">
         <div *ngIf="dis.tag == 'ชนะ'">
           <!-- <button ion-button clear color="dark" text-center (click)="GoInfoDetail(dis)"> -->
-          <ion-row text-center (click)="GoInfoDetail(dis)">
-            <ion-col col-5>{{dis.name}}</ion-col>
-            <ion-col col-3>{{dis.goal}}</ion-col>
-            <ion-col col-4>{{dis.vote}}</ion-col>
-          </ion-row>
+          <ion-grid>
+            <ion-row text-center (click)="GoInfoDetail(dis)">
+              <ion-col col-5>{{dis.name}}</ion-col>
+              <ion-col col-3>{{dis.goal}}</ion-col>
+              <ion-col col-4>{{dis.vote}}</ion-col>
+            </ion-row>
+          </ion-grid>
           <!-- </button> -->
         </div>
       </div>
@@ -69,11 +70,13 @@
       <div *ngFor="let dis of districts;let i = index">
         <div *ngIf="dis.tag == 'เสมอ'">
           <!-- <button ion-button clear color="dark" text-center (click)="GoInfoDetail(dis)"> -->
-          <ion-row text-center (click)="GoInfoDetail(dis)">
-            <ion-col col-5>{{dis.name}}</ion-col>
-            <ion-col col-3>{{dis.goal}}</ion-col>
-            <ion-col col-4>{{dis.vote}}</ion-col>
-          </ion-row>
+          <ion-grid>
+            <ion-row text-center (click)="GoInfoDetail(dis)">
+              <ion-col col-5>{{dis.name}}</ion-col>
+              <ion-col col-3>{{dis.goal}}</ion-col>
+              <ion-col col-4>{{dis.vote}}</ion-col>
+            </ion-row>
+          </ion-grid>
           <!-- </button> -->
         </div>
       </div>
@@ -82,11 +85,13 @@
       <div *ngFor="let dis of districts;let i = index">
         <div *ngIf="dis.tag == 'แพ้'">
           <!-- <button ion-button clear color="dark" text-center (click)="GoInfoDetail(dis)"> -->
-          <ion-row text-center (click)="GoInfoDetail(dis)">
-            <ion-col col-5>{{dis.name}}</ion-col>
-            <ion-col col-3>{{dis.goal}}</ion-col>
-            <ion-col col-4>{{dis.vote}}</ion-col>
-          </ion-row>
+          <ion-grid>
+            <ion-row text-center (click)="GoInfoDetail(dis)">
+              <ion-col col-5>{{dis.name}}</ion-col>
+              <ion-col col-3>{{dis.goal}}</ion-col>
+              <ion-col col-4>{{dis.vote}}</ion-col>
+            </ion-row>
+          </ion-grid>
           <!-- </button> -->
         </div>
       </div>
