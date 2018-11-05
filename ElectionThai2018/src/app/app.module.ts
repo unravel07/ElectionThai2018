@@ -10,12 +10,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { InfoDetailPage } from '../pages/info-detail/info-detail';
 import {ChartsModule} from 'ng2-charts';
+import { LoginPage } from '../pages/login/login';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     TabsPage,
-    InfoDetailPage
+    InfoDetailPage,
+    LoginPage,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import {ChartsModule} from 'ng2-charts';
     MyApp,
     HomePage,
     TabsPage,
-    InfoDetailPage
+    InfoDetailPage,
+    LoginPage,
   ],
   providers: [
     StatusBar,
