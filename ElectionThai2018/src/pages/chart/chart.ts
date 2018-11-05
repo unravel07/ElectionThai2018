@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { PoliticalParty, GlobalVarible } from '../../app/models';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { GlobalVarible, PoliticalParty } from '../../app/models';
 
+/**
+ * Generated class for the ChartPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-chart',
+  templateUrl: 'chart.html',
 })
-export class HomePage {
+export class ChartPage {
 
   politicalParties: PoliticalParty[];
   public barChartLabels: string[];
@@ -20,11 +28,9 @@ export class HomePage {
   public barChartData: any[];
   public barChartDataDistrict: any[];
   public barChartDataPartyList: any[];
-  public chartE: string;
 
   constructor(public navCtrl: NavController) {
 
-    this.chartE = "totlaMembers";
     if (GlobalVarible.PoliticalParties == null) {
       GlobalVarible.PoliticalParties = [{
         name: 'เพื่อไทย',
