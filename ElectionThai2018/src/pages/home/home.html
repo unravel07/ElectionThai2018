@@ -1,56 +1,10 @@
 <ion-header>
   <ion-navbar color="danger"> 
-    <ion-title>Home</ion-title>
+    <ion-title>Chart</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
-    <ion-list>
-      <ion-item class="itemB">
-        <ion-row style="font-size: 12px">
-          <ion-col col-3 style="text-align: center">
-            ชื่อพรรค
-          </ion-col>
-          <ion-col col-3 style="text-align: center">
-            % ทั้งหมด
-          </ion-col>
-          <ion-col>
-            พึงมี
-          </ion-col>
-          <ion-col col-2>
-            แบ่งเขต
-          </ion-col>
-          <ion-col col-2>
-            สัดส่วน
-          </ion-col>
-        </ion-row>
-      </ion-item>
-
-      <ion-item *ngFor="let party of politicalParties;let i = index">
-        <ion-row style="font-size: 12px">
-          <ion-col col-4>
-            {{i+1}}. {{party.name}}
-          </ion-col>
-          <ion-col col-2 style="background:#FFFACD">
-            {{party.percent}}
-          </ion-col>
-          <ion-col col-2 style="background:#FAFAD2">
-            {{party.totalMember}}
-          </ion-col>
-          <ion-col col-2 style="background:#FFEFD5">
-            {{party.districtMember}}
-          </ion-col>
-          <ion-col col-2 style="background:#FFFFE0">
-            {{party.partyList}}
-          </ion-col>
-        </ion-row>
-      </ion-item>
-
-    </ion-list>
-  </ion-card>
-
-
 
   <ion-segment [(ngModel)]="chartE">
     <ion-segment-button value="totlaMembers">
